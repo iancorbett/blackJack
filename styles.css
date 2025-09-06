@@ -2,6 +2,7 @@
     --bg: #0b1220;
     --text-color: #e5e7eb;
     --shadow: 0 10px 30px rgba(0,0,0,.45);
+    --muted: #9ca3af;
 } 
 
  * { box-sizing: border-box; } /*content-box => width = content only, Padding + border get added on top. border-box => width = content + padding + border much easier to size things consistently (especially with padding) */
@@ -25,4 +26,27 @@
     padding: 20px;
     box-shadow: var(--shadow);
     border: 2px solid rgba(255,255,255,.06); 
+  }
+
+  header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 12px;
+    padding: 6px 4px 14px;
+  }
+
+  .bankroll {
+    display:flex;
+    gap: 14px;
+    align-items:center;
+    font-weight: 600;
+  }
+
+  .bankroll .pill {
+    background: #111827;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.07);
+    color: var(--muted);
   }
