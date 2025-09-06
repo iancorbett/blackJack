@@ -140,3 +140,6 @@
 
   .hint { color: var(--muted); font-size: 12px; }
 
+  @media (min-width: 860px) {
+    .hands { grid-template-columns: 1fr 1fr; }
+  }
