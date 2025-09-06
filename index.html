@@ -28,11 +28,11 @@
             </div>
              <div class="hands"> <!--going to contain current cpu and user counts -->
                 <div class="row">
-                    <h2>Dealer <span class="totals">0</span></h2>
+                    <h2>Dealer <span class="totals" id="dealerTotal">0</span></h2>
                     <div id="dealer" class="cards"></div>
                 </div>
                 <div class="row">
-                    <h2>Player <span class="totals">0</span></h2>
+                    <h2>Player <span class="totals" id="playerTotal">0</span></h2>
                     <div id="player" class="cards"></div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <button>Double</button>
                 <button class="secondary">New Round</button>
             </div>
-            <div class="hint">Dealer stands on all 17. Blackjack pays 3:2.</div>
+            <div id="ruleHint" class="hint">Dealer stands on all 17. Blackjack pays 3:2.</div>
         </div>
 
     </main>
