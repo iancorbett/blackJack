@@ -104,6 +104,14 @@
     color: var(--muted);
   }
 
+  .controls {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 16px;
+    justify-content:center;
+  }
+
   .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
 
   .totals { margin-left: 8px; font-weight: 700; }
