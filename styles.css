@@ -4,3 +4,5 @@
 
  * { box-sizing: border-box; } /*content-box => width = content only, Padding + border get added on top. border-box => width = content + padding + border much easier to size things consistently (especially with padding) */
  html, body { height: 100%; } /*By default, <html> and <body> only expand as tall as their content. Setting height: 100% makes them stretch to fill the entire viewport */
+
+  .app { width: min(1000px, 96vw); } /*cap size of game at 1000 pix width for large displays by choosing smaller display size will allow clean resizing on mobile devices */
