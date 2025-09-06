@@ -124,10 +124,17 @@
     transition: transform .05s ease, opacity .2s ease;
   }
 
-  .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
-
-  .totals { margin-left: 8px; font-weight: 700; }
+  button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+  }
 
   button:active { transform: translateY(1px); }
   .success { background: var(--accent); }
   .secondary { background: #1bc886; }
+
+
+  .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
+
+  .totals { margin-left: 8px; font-weight: 700; }
+
