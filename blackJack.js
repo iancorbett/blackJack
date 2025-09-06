@@ -22,6 +22,19 @@ function createDeck(n=6) { //using six decks, as most casinos use 6 or 8 in real
     function valueOf(card){
         if (card.r === 'A') return 11; //aces worth 11
         if (["K","Q","J"].includes(card.r)) return 10; //face cards worth 10
-        return Number(card.r);//numbered cars worth the number value on card
+        return Number(card.r);//numbered cards worth the number value on card
         }
+
+        function handValue(cards){
+            let total = 0, aces = 0; //initialize total to zero, track aces to potentially adjust scoring as aces by rule can be counted as 1 also
+            for (const c of cards){//iterate through cards in hand 
+            total += valueOf(c); //add values of cards in hands
+            if (c.r === 'A') aces++; //r refers to rank, if ace then increment aces count
+            }
+            while (total > 21 && aces > 0){//if score is over 21, and an ace is present, subtract 10 and count ace as a 1
+            total -= 10;
+            aces--;
+            }
+            return total;
+            }
   
