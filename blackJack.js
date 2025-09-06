@@ -18,4 +18,10 @@ function createDeck(n=6) { //using six decks, as most casinos use 6 or 8 in real
     }
     return a; //return shuffled deck
     }
+
+    function valueOf(card){
+        if (card.r === 'A') return 11; //aces worth 11
+        if (["K","Q","J"].includes(card.r)) return 10; //face cards worth 10
+        return Number(card.r);//numbered cars worth the number value on card
+        }
   
