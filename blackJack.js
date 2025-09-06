@@ -1,7 +1,8 @@
 const $ = sel => document.querySelector(sel); //$ is just a shortcut name so we don’t have to type document.querySelector every time
 const bankEl = $('#bank');
 const betEl = $('#bet');
-
+const betDisplay = $('#betDisplay');
+const statusEl = $('#status');
 
 const SUITS = ["♠", "♥", "♦", "♣"];
 const RANKS = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
