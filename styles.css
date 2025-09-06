@@ -88,6 +88,14 @@
     padding: 14px;
   }
 
+  .cards {
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    min-height: 108px;
+    flex-wrap: wrap;
+  }
+
   .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
 
   .totals { margin-left: 8px; font-weight: 700; }
