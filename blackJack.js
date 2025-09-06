@@ -10,4 +10,12 @@ function createDeck(n=6) { //using six decks, as most casinos use 6 or 8 in real
     }
    
   }
+
+  function shuffle(a){
+    for (let i=a.length-1;i>0;i--){ //start at last element, fisher-yates shuffle
+    const j = Math.floor(Math.random()*(i+1)); //select a random index, set as j
+    [a[i],a[j]]=[a[j],a[i]]; //switch i and j
+    }
+    return a; //return shuffled deck
+    }
   
