@@ -3,6 +3,7 @@
     --text-color: #e5e7eb;
     --shadow: 0 10px 30px rgba(0,0,0,.45);
     --muted: #9ca3af;
+    --accent: #22c55e;
 } 
 
  * { box-sizing: border-box; } /*content-box => width = content only, Padding + border get added on top. border-box => width = content + padding + border much easier to size things consistently (especially with padding) */
@@ -79,3 +80,7 @@
     border-radius:10px;
     cursor:pointer;
   }
+
+  button:active { transform: translateY(1px); }
+  .success { background: var(--accent); }
+  .secondary { background: #374151; }
