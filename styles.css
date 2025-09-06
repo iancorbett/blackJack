@@ -1,6 +1,7 @@
  :root {
     --bg: #0b1220;
     --text-color: #e5e7eb;
+    --shadow: 0 10px 30px rgba(0,0,0,.45);
 } 
 
  * { box-sizing: border-box; } /*content-box => width = content only, Padding + border get added on top. border-box => width = content + padding + border much easier to size things consistently (especially with padding) */
