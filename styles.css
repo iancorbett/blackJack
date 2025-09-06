@@ -1,0 +1,6 @@
+/* :root {
+
+} */
+
+ * { box-sizing: border-box; } /*content-box => width = content only, Padding + border get added on top. border-box => width = content + padding + border much easier to size things consistently (especially with padding) */
+ html, body { height: 100%; } /*By default, <html> and <body> only expand as tall as their content. Setting height: 100% makes them stretch to fill the entire viewport */
