@@ -81,6 +81,8 @@
     cursor:pointer;
   }
 
+  .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
+
   button:active { transform: translateY(1px); }
   .success { background: var(--accent); }
   .secondary { background: #1bc886; }
