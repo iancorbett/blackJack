@@ -61,3 +61,13 @@
     flex-wrap: wrap;
     padding: 10px 0 4px;
   }
+
+  .betbar input[type="number"] {
+    width: 120px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(154, 220, 10, 0.937);
+    background:#1c2438;
+    color: var(--text-color);
+    font-weight:600;
+  }
