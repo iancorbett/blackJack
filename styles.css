@@ -71,3 +71,11 @@
     color: var(--text-color);
     font-weight:600;
   }
+
+  .chip {
+    background:#1f2937;
+    border:1px solid rgba(74, 170, 60, 0.614);
+    padding:8px 10px;
+    border-radius:10px;
+    cursor:pointer;
+  }
