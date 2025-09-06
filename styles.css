@@ -96,6 +96,14 @@
     flex-wrap: wrap;
   }
 
+  .row h2 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--muted);
+  }
+
   .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
 
   .totals { margin-left: 8px; font-weight: 700; }
