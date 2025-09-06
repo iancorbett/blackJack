@@ -112,6 +112,18 @@
     justify-content:center;
   }
 
+  button {
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform .05s ease, opacity .2s ease;
+  }
+
   .hands { display:grid; grid-template-columns: 1fr; gap: 18px; }
 
   .totals { margin-left: 8px; font-weight: 700; }
