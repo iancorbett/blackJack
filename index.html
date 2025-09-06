@@ -11,15 +11,15 @@
          <div class="table"> <!--creating a div, not an html table but this div will be styled with css and eventually resemble an actual cards table -->
             <header>
                 <div class="bankroll">
-                    <div class="pill">Bankroll: $<span>1000</span></div>
+                    <div class="pill">Bankroll: $<span id="bank">1000</span></div>
                     <div class="pill">Bet: $<span>0</span></div>
                   </div>
                   <div class="status">Place your bet to begin.</div>
             </header>
 
             <div class="betbar">
-                <label>Bet</label>
-                <input type="number" min="5" step="5" value="25" />
+                <label for="bet">Bet</label>
+                <input id="bet" type="number" min="5" step="5" value="25" />
                 <span class="chip">+$25</span>
                 <span class="chip">+$50</span>
                 <span class="chip">+$100</span>
