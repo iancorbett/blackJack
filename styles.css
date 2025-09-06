@@ -83,4 +83,4 @@
 
   button:active { transform: translateY(1px); }
   .success { background: var(--accent); }
-  .secondary { background: #374151; }
+  .secondary { background: #1bc886; }
