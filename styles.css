@@ -50,3 +50,5 @@
     border: 1px solid rgba(255,255,255,.07);
     color: var(--muted);
   }
+
+  .status { font-weight: 700; letter-spacing: .3px; }
