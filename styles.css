@@ -138,3 +138,5 @@
 
   .totals { margin-left: 8px; font-weight: 700; }
 
+  .hint { color: var(--muted); font-size: 12px; }
+
