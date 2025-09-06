@@ -8,7 +8,7 @@ function createDeck(n=6) { //using six decks, as most casinos use 6 or 8 in real
         for (const r of RANKS) d.push({ r, s }); //iterate through each of the thirteen cards for each suit in each deck, 52 cards per deck, 312 cards in total
       }
     }
-   
+    return shuffle(d);
   }
 
   function shuffle(a){
