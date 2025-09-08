@@ -25,33 +25,15 @@ Features a 6-deck shoe, chip betting, double down, proper blackjack payout (3:2)
 
 ## Getting Started
 
-Option 1: Just open it
+**VS Code**
 
-Open index.html in your browser.
+**Install the Live Server extension**
 
-Option 2: Run a local server (recommended)
+**Right-click index.html → Open with Live Server**
 
-Any of these work:
+---
 
-Python
-
-# Python 3
-python3 -m http.server 8080
-# then open http://localhost:8080
-
-
-Node (http-server)
-
-npx http-server -p 8080
-
-
-VS Code
-
-Install the Live Server extension
-
-Right-click index.html → Open with Live Server
-
-How to Play
+## How to Play
 
 Set your bet (input or click chips) → Deal
 
@@ -69,23 +51,26 @@ Blackjack pays 3:2
 
 Double allowed on first two cards and auto-stand after drawing one
 
-Configuration
+---
+
+## Configuration
 
 All in blackJack.js:
 
-Number of decks
+**Number of decks**
+
 At bottom init:
 
 deck = createDeck(6); // change to 1 or 8, etc.
 
 
-Table minimum
+**Table minimum**
 In deal():
 
 let desiredBet = Math.max(5, Number(betEl.value) || 0); // min = 5
 
 
-Dealer hits soft 17 (optional)
+**Dealer hits soft 17 (optional)**
 Replace the dealer loop in stand() with:
 
 function isSoftHand(cards){
@@ -102,43 +87,48 @@ while (
   dealer.push(deck.pop());
 }
 
-Architecture Notes
+---
 
-State machine
+## Architecture Notes
+
+**State machine**
 
 const STATE = { BETTING:'betting', PLAYER:'player', DEALER:'dealer', DONE:'done' };
 
 
 UI is gated by setButtons() so only valid actions are clickable in each phase.
 
-Rendering
+**Rendering**
 
 renderHands() draws both hands and updates totals
 
 Dealer’s hole card is tracked as hiddenDealerCard; shown via revealHole()
 
-Persistence
+**Persistence**
 
 localStorage.setItem('bankroll', String(bankroll));
 
 
 Bankroll survives refreshes; Reset Bank sets it back to 1000.
 
-DOM IDs (must match your HTML)
+## DOM IDs (must match your HTML)
 #bank           #bet            #betDisplay
 #status         #dealer         #player
 #dealerTotal    #playerTotal    #ruleHint
 #deal #hit #stand #double #newRound #resetBank
 
+---
 
-Status/hint elements
+## Status/hint elements
 
 <div class="status" id="status">Place your bet to begin.</div>
 <div id="ruleHint" class="hint">Dealer stands on all 17. Blackjack pays 3:2.</div>
 
-Troubleshooting
+---
 
-“Nothing happens when I click Deal” / cards don’t render
+## Troubleshooting
+
+**“Nothing happens when I click Deal” / cards don’t render**
 
 Open DevTools → Console. If you see
 Cannot set properties of null (setting 'textContent')
@@ -148,7 +138,7 @@ Ensure your JS, CSS, and HTML are in separate files. Don’t paste CSS/HTML into
 
 Confirm <script src="blackJack.js"></script> matches the actual filename (case-sensitive).
 
-Dealer didn’t look like they hit
+**Dealer didn’t look like they hit**
 
 Make sure you re-render after dealer finishes in stand():
 
@@ -159,7 +149,7 @@ endRound();
 
 If you want to see each hit, render inside the loop with a small delay (async).
 
-New Round shows cards from the last round
+**New Round shows cards from the last round**
 
 Clear hands before rendering:
 
@@ -167,13 +157,15 @@ dealer = []; player = []; hiddenDealerCard = null;
 renderHands();
 
 
-Bankroll doesn’t change
+**Bankroll doesn’t change**
 
 Check saveBank() is called after payouts and bets.
 
 localStorage can be blocked in some privacy modes.
 
-Styling
+---
+
+## Styling
 
 Global tokens in :root (colors/shadows) for easy theming
 
@@ -181,7 +173,9 @@ Cards use .card + .card.red and a faint .big suit “watermark”
 
 Responsive grid switches to two columns for dealer/player at min-width: 860px
 
-Ideas / Next Steps
+---
+
+## Ideas / Next Steps
 
 Split, Insurance, Surrender
 
@@ -194,8 +188,4 @@ Shoe penetration & cut card
 Basic strategy helper overlay
 
 Light theme
-
-License
-
-MIT — use it, remix it, ship it. 🎰
 
