@@ -107,6 +107,17 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
         });
         }
 
-
+        function cardEl(card){
+            const el = document.createElement('div'); //create div for new card
+            const red = (card.s === '♥' || card.s === '♦');//red for diamonds and hearts
+            el.className = 'card' + (red ? ' red' : '');//defaults to black otherwise due to css styling we added
+            el.innerHTML = `
+            <div class="rank">${card.r}</div>
+            <div class="suit">${card.s}</div>
+            <div class="big">${card.s}</div> 
+            `;
+            //use "big" create effect of a watermark in center of card, similar to real card
+            return el;
+            }
 
         saveBank(); updateBetDisplay(); deck=createDeck(6);
