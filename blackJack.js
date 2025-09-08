@@ -190,4 +190,9 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                 if (hiddenDealerCard){ dealer[0] = hiddenDealerCard; hiddenDealerCard=null; renderHands(); }
                  }
 
+            function newRound(){ 
+                state=STATE.BETTING; setButtons(); setStatus('Place your bet.'); renderHands(); //set state back to beting and render new hands
+                playerTotalEl.textContent='0'; dealerTotalEl.textContent='0'; //set both totals to 0 for new round
+            }
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
