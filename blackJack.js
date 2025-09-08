@@ -80,4 +80,8 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
         bankEl.textContent = bankroll.toFixed(0);
         }
 
+    function updateBetDisplay(){
+    betDisplay.textContent = (Number(betEl.value)||0).toFixed(0); //make betEl.value a number and use is as text for bet
+    }
+
   
