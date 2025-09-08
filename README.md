@@ -5,6 +5,10 @@ Features a 6-deck shoe, chip betting, double down, proper blackjack payout (3:2)
 
 ---
 
+<img width="1148" height="711" alt="Screenshot 2025-09-08 at 3 20 54 PM" src="https://github.com/user-attachments/assets/e97434bd-07db-4b56-a45e-ad2115c58f10" />
+
+---
+
 ## Features
 
  **6-deck shoe (configurable)**
