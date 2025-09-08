@@ -84,4 +84,8 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
     betDisplay.textContent = (Number(betEl.value)||0).toFixed(0); //make betEl.value a number and use is as text for bet
     }
 
-  
+    function setStatus(msg){ statusEl.textContent = msg; }
+    function setHint(msg, cls='hint'){
+        ruleHintEl.className = 'hint ' + cls;
+        ruleHintEl.textContent = msg;
+        }
