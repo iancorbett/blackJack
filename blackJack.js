@@ -3,6 +3,8 @@ const bankEl = $('#bank');
 const betEl = $('#bet');
 const betDisplay = $('#betDisplay');
 const statusEl = $('#status');
+const dealerEl = $('#dealer');
+const playerEl = $('#player');
 const dealerTotalEl = $('#dealerTotal');
 const playerTotalEl = $('#playerTotal');
 const ruleHintEl = $('#ruleHintEl');
@@ -88,4 +90,11 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
     function setHint(msg, cls='hint'){
         ruleHintEl.className = 'hint ' + cls;
         ruleHintEl.textContent = msg;
+        }
+
+    function renderHands(){ //renders both players hands
+        renderHand(playerEl, player); //render hand for player, that function will be defined down below
+        renderHand(dealerEl, dealer, !!hiddenDealerCard); //render hand for dealer, using !! creates  boolean with value of true
+        playerTotalEl.textContent = handValue(player); //calculate user score
+        dealerTotalEl.textContent = hiddenDealerCard ? '?' : handValue(dealer);//show dealer score when hole card has been revealed
         }
