@@ -106,3 +106,7 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
         else root.appendChild(cardEl(c));//deal users cards and other dealers cards face up
         });
         }
+
+
+
+        saveBank(); updateBetDisplay(); deck=createDeck(6);
