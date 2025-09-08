@@ -128,4 +128,15 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
     
          function burnIfLow(){ if (deck.length < 52) deck = createDeck(6); }//create new shuffled deck when current deck gets low
 
+         function setButtons(){
+            btnDeal.disabled = state !== STATE.BETTING;//The Deal button is only clickable when you’re in the BETTING phase
+            betEl.disabled = state !== STATE.BETTING;//The bet button is only clickable when you’re in the BETTING phase
+            document.querySelectorAll('.chip').forEach(chip => chip.style.pointerEvents = (state===STATE.BETTING? 'auto':'none'));//Betting chips (+25, +50, +100) only respond to clicks during betting
+            const canAct = state === STATE.PLAYER;//true only while it’s your turn (PLAYER state)
+            btnHit.disabled = !canAct; //Hit / Stand buttons are enabled only while you’re making moves
+            btnStand.disabled = !canAct;
+            btnDouble.disabled = !(canAct && player.length === 2 && bankroll >= bet); //can only double down on your turn, with two cards, and with sufficient funds
+            btnNew.disabled = state !== STATE.DONE;
+            }
+
         saveBank(); updateBetDisplay(); deck=createDeck(6);
