@@ -48,8 +48,8 @@
     background: #111827;
     padding: 8px 12px;
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.07);
-    color: var(--muted);
+    border: 1px solid rgba(147, 237, 12, 0.896);
+    color: var(--text-color);
   }
 
   .status { font-weight: 700; letter-spacing: .3px; }
@@ -83,7 +83,7 @@
 
   .row {
     background: rgba(0,0,0,.22);
-    border: 1px solid rgba(255,255,255,.06);
+    border: 1px solid rgba(221, 224, 50, 0.698);
     border-radius: 16px;
     padding: 14px;
   }
