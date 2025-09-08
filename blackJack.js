@@ -162,4 +162,11 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                 setButtons();
                 }
 
+                function hit(){
+                    if (state !== STATE.PLAYER) return;//only play  on usres turn
+                    player.push(deck.pop());//adds top card to users hand
+                    renderHands();
+                    if (handValue(player) > 21) endRound('bust');//round ends on bust, endround will be defined below
+                    }
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
