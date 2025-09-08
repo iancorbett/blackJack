@@ -125,5 +125,7 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
         el.className = 'card back';
         return el;
          }
+    
+         function burnIfLow(){ if (deck.length < 52) deck = createDeck(6); }//create new shuffled deck when current deck gets low
 
         saveBank(); updateBetDisplay(); deck=createDeck(6);
