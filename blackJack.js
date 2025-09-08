@@ -75,6 +75,9 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
       let bet = 0; //bet initialized to 0
       let state = STATE.BETTING; //begin game in betting phase
       
-
+      function saveBank(){
+        localStorage.setItem('bankroll', String(bankroll)); //save as a string to local storage
+        bankEl.textContent = bankroll.toFixed(0);
+        }
 
   
