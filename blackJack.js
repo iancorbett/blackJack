@@ -186,4 +186,8 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                 stand();//user then stands with three cards regardless of score
                 }
 
+            function revealHole(){
+                if (hiddenDealerCard){ dealer[0] = hiddenDealerCard; hiddenDealerCard=null; renderHands(); }
+                 }
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
