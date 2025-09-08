@@ -169,4 +169,12 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                     if (handValue(player) > 21) endRound('bust');//round ends on bust, endround will be defined below
                     }
 
+                function stand(){
+                     if (state !== STATE.PLAYER) return;//only play on users turn
+                     revealHole();//show hole card using function that  we will define below
+                     state = STATE.DEALER;//dealers turn
+                     while (handValue(dealer) < 17) dealer.push(deck.pop());//dealer hits while under 17, no hitting on soft 17
+                    endRound();
+                    }
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
