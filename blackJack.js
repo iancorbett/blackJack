@@ -98,3 +98,11 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
         playerTotalEl.textContent = handValue(player); //calculate user score
         dealerTotalEl.textContent = hiddenDealerCard ? '?' : handValue(dealer);//show dealer score when hole card has been revealed
         }
+
+    function renderHand(root, cards, hasHole){
+        root.innerHTML = ''; //root is the DOM element where we want to draw cards (playerEl or dealerEl)
+        cards.forEach((c, i) => { //iterate though each cad in the hand
+        if (i===0 && hasHole) root.appendChild(cardBack()); //deal delers first card upside down
+        else root.appendChild(cardEl(c));//deal users cards and other dealers cards face up
+        });
+        }
