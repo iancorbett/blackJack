@@ -139,4 +139,4 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
             btnNew.disabled = state !== STATE.DONE;
             }
 
-        saveBank(); updateBetDisplay(); deck=createDeck(6);
+        saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
