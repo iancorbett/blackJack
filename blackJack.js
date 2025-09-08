@@ -139,4 +139,27 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
             btnNew.disabled = state !== STATE.DONE;
             }
 
+            function deal(){
+                let desiredBet = Math.max(5, Number(betEl.value)||0);//cant bet less than 5
+                desiredBet = Math.min(desiredBet, bankroll);//cant bet more than bankroll
+                if (desiredBet <= 0) { setHint('You need money to bet 🙂', 'hint'); return; }
+                bet = desiredBet;
+                bankroll -= bet; saveBank(); updateBetDisplay();//subtract bankroll by bet size
+                burnIfLow();
+                dealer = []; player = []; hiddenDealerCard = null;
+                state = STATE.PLAYER; setButtons(); setStatus('Your move.'); setHint('Hit, Stand, or Double.');
+                player.push(deck.pop()); hiddenDealerCard = deck.pop(); dealer.push(hiddenDealerCard);//deal first cards
+                player.push(deck.pop()); dealer.push(deck.pop());//deal second cards
+                if (isBlackjack(player) || isBlackjack(dealer)){//check for blackjack
+                revealHole();
+                const pBJ = isBlackjack(player);//pBJ => player blackjack
+                const dBJ = isBlackjack(dealer); //dBJ => dealer blackjack
+                if (pBJ && dBJ) return endRound('push');//in case of two blackjacks
+                if (pBJ) { bankroll += bet + Math.floor(bet*1.5); saveBank(); return endRound('player-bj'); }//1.5 times payout for blackjack
+                if (dBJ) return endRound('dealer-bj');//in case of dealer blackjack
+                }
+                renderHands();
+                setButtons();
+                }
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
