@@ -177,4 +177,13 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                     endRound();
                     }
 
+            function doubleDown(){
+                if (state !== STATE.PLAYER || bankroll < bet) return;//oly double down on your turn and with sufficient funds
+                bankroll -= bet; bet *= 2; saveBank(); //take oyt bet and update bankroll
+                player.push(deck.pop()); //take another card
+                renderHands();
+                if (handValue(player) > 21) return endRound('bust');//check if bust
+                stand();//user then stands with three cards regardless of score
+                }
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
