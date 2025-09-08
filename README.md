@@ -7,26 +7,24 @@ Features a 6-deck shoe, chip betting, double down, proper blackjack payout (3:2)
 
 ## Features
 
- 6-deck shoe (configurable)
+ **6-deck shoe (configurable)**
 
- Correct hand values with soft Ace handling
+ **Correct hand values with soft Ace handling**
 
- Blackjack pays 3:2
+ **Blackjack pays 3:2**
 
- Dealer stands on all 17 (toggleable; notes below)
+ **Dealer stands on all 17 (toggleable; notes below)**
 
-Bet via input or chips (+$25, +$50, +$100)
+ **Bet via input or chips (+$25, +$50, +$100)**
 
- Double Down (first two cards)
+ **Double Down (first two cards)**
 
- Bankroll persists across refreshes (localStorage)
+ **Bankroll persists across refreshes (localStorage)**
 
- Responsive layout; clean “felt table” UI
+ **Responsive layout; clean “felt table” UI**
 
+## Getting Started
 
-Make sure filenames and the <link>/<script> tags match exactly (case-sensitive on many systems).
-
-Getting Started
 Option 1: Just open it
 
 Open index.html in your browser.
