@@ -7,7 +7,7 @@ const dealerEl = $('#dealer');
 const playerEl = $('#player');
 const dealerTotalEl = $('#dealerTotal');
 const playerTotalEl = $('#playerTotal');
-const ruleHintEl = $('#ruleHintEl');
+const ruleHintEl = $('#ruleHint');
 
 //buttons
 const btnDeal = $('#deal');
