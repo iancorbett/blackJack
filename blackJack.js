@@ -59,5 +59,13 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
     return cards.length === 2 && handValue(cards) === 21;
     }
 
+    document.querySelectorAll('.chip').forEach(chip => //select all the chips
+        chip.addEventListener('click', () => {//make them all clickable
+          betEl.value = Math.max(0, Number(betEl.value) || 0) + Number(ch.dataset.chip); //Makes sure the result is never less than 0 (prevents weird negative bets if something broke)
+          updateBetDisplay();
+        })
+      );
+      
+
 
   
