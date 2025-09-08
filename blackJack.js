@@ -120,4 +120,10 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
             return el;
             }
 
+    function cardBack(){
+        const el = document.createElement('div');
+        el.className = 'card back';
+        return el;
+         }
+
         saveBank(); updateBetDisplay(); deck=createDeck(6);
