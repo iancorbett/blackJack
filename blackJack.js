@@ -65,6 +65,15 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
           updateBetDisplay();
         })
       );
+
+      const STATE = { BETTING:'betting', PLAYER:'player', DEALER:'dealer', DONE:'done' };
+      let deck = []; //deck starts empty prior to first shuffle
+      let dealer = [];//dealer starts with no cards
+      let player = []; //player starts with no cards
+      let hiddenDealerCard = null; //hidden "hole" card 
+      let bankroll = Number(localStorage.getItem('bankroll')||1000); //get bankroll from local storage
+      let bet = 0; //bet initialized to 0
+      let state = STATE.BETTING; //begin game in betting phase
       
 
 
