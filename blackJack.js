@@ -190,6 +190,21 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                 if (hiddenDealerCard){ dealer[0] = hiddenDealerCard; hiddenDealerCard=null; renderHands(); }
                  }
 
+            function endRound(reason){
+                revealHole();
+                 const pVal = handValue(player), dVal = handValue(dealer);
+                 state = STATE.DONE; setButtons();
+                 if (reason==='bust'){ setHint('Player busts! Dealer wins.','lose'); setStatus('Bust.'); return; }
+                 if (reason==='player-bj'){ setHint('Blackjack! You win 3:2','win'); setStatus('Blackjack!'); return; }
+                 if (reason==='dealer-bj'){ setHint('Dealer Blackjack.','lose'); setStatus('Dealer Blackjack'); return; }
+                 if (reason==='push'){ bankroll+=bet; saveBank(); setHint('Push. Bet returned.','push'); setStatus('Push.'); return; }
+                 if (pVal>21){ setHint('Player busts!','lose'); return; }
+                 if (dVal>21){ bankroll+=bet*2; saveBank(); setHint('Dealer busts! You win.','win'); setStatus('Dealer busts!'); return; }
+                 if (pVal>dVal){ bankroll+=bet*2; saveBank(); setHint('You win!','win'); setStatus('You win!'); return; }
+                 if (pVal<dVal){ setHint('Dealer wins.','lose'); setStatus('Dealer wins'); return; }
+                 bankroll+=bet; saveBank(); setHint('Push.','push'); setStatus('Push.');
+                }
+
             function newRound(){ 
                 state=STATE.BETTING; setButtons(); setStatus('Place your bet.'); renderHands(); //set state back to beting and render new hands
                 playerTotalEl.textContent='0'; dealerTotalEl.textContent='0'; //set both totals to 0 for new round
