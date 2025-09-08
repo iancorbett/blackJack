@@ -195,4 +195,11 @@ function isBlackjack(cards){ //determie if thre is a blackjack dealt immediately
                 playerTotalEl.textContent='0'; dealerTotalEl.textContent='0'; //set both totals to 0 for new round
             }
 
+            btnDeal.addEventListener('click', deal);
+            btnHit.addEventListener('click', hit);
+            btnStand.addEventListener('click', stand);
+            btnDouble.addEventListener('click', doubleDown);
+            btnNew.addEventListener('click', newRound);
+            resetBank.addEventListener('click', ()=>{ bankroll=1000; saveBank(); setHint('Bankroll reset.','hint'); });
+
         saveBank(); updateBetDisplay(); setButtons(); deck=createDeck(6);
